@@ -1,5 +1,5 @@
 {
-  "name": "graphql-playground-react",
+  "name": "@robframpton/graphql-playground-react",
   "version": "1.7.27",
   "main": "./lib/lib.js",
   "typings": "./lib/lib.d.ts",

@@ -218,7 +218,9 @@ class PlaygroundWrapper extends React.Component<
     config?: GraphQLConfig,
   ): { projectName?: string; activeEnv?: string } {
     if (config) {
-      if (config.extensions && config.extensions.endpoints) {
+      if (config.extensions && config.extensions.activeEnv) {
+        return config.extensions.activeEnv
+      } else if (config.extensions && config.extensions.endpoints) {
         return {
           activeEnv: Object.keys(config.extensions.endpoints)[0],
         }
@@ -553,11 +555,11 @@ async function find(
 }
 
 const appearIn = keyframes`
-  from { 
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }
